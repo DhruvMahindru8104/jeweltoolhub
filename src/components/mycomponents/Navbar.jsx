@@ -10,7 +10,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
-  // Link style based on active page
+  // Active link styles
   const linkClass = (path) =>
     pathname === path
       ? "font-medium text-yellow-500 dark:text-yellow-500"
@@ -26,7 +26,7 @@ export default function Navbar() {
             href="/"
             className="flex-none text-xl font-semibold focus:outline-hidden focus:opacity-80"
             aria-label="Brand"
-            onClick={() => setIsOpen(false)} // Logo click pe bhi close
+            onClick={() => setIsOpen(false)}
           >
             <span className="inline-flex items-center gap-x-2 text-xl font-bold">
               <Image
@@ -61,6 +61,10 @@ export default function Navbar() {
             <Link href="/" className={linkClass("/")} onClick={() => setIsOpen(false)}>Home</Link>
             <Link href="/goldsmith-tools" className={linkClass("/goldsmith-tools")} onClick={() => setIsOpen(false)}>Tools</Link>
             <Link href="/jewellery-boxes" className={linkClass("/jewellery-boxes")} onClick={() => setIsOpen(false)}>Jewellery Boxes</Link>
+            <Link href="/chain-boxes" className={linkClass("/chain-boxes")} onClick={() => setIsOpen(false)}>Chain Boxes</Link>
+            <Link href="/ring-boxes" className={linkClass("/ring-boxes")} onClick={() => setIsOpen(false)}>Ring Boxes</Link>
+            <Link href="/tops-boxes" className={linkClass("/tops-boxes")} onClick={() => setIsOpen(false)}>Tops Boxes</Link>
+            <Link href="/trays" className={linkClass("/trays")} onClick={() => setIsOpen(false)}>Trays</Link>
             <Link href="/contact" className={linkClass("/contact")} onClick={() => setIsOpen(false)}>Contact</Link>
           </div>
         </div>
