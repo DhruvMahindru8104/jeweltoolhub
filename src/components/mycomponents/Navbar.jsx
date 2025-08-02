@@ -4,9 +4,17 @@ import Link from "next/link";
 import Image from "next/image";
 import { HiMenu, HiX } from "react-icons/hi";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+
+  // Link style based on active page
+  const linkClass = (path) =>
+    pathname === path
+      ? "font-medium text-yellow-500 dark:text-yellow-500"
+      : "font-medium text-black hover:text-gray-500 dark:text-neutral-300 dark:hover:text-neutral-400";
 
   return (
     <header className="relative flex flex-wrap sm:justify-start sm:flex-nowrap w-full bg-white text-sm pt-3 border-b border-gray-200 dark:bg-neutral-900">
@@ -15,9 +23,10 @@ export default function Navbar() {
         {/* Brand Logo */}
         <div className="flex items-center justify-between w-full sm:w-auto">
           <Link
-            href="#"
+            href="/"
             className="flex-none text-xl font-semibold focus:outline-hidden focus:opacity-80"
             aria-label="Brand"
+            onClick={() => setIsOpen(false)} // Logo click pe bhi close
           >
             <span className="inline-flex items-center gap-x-2 text-xl font-bold">
               <Image
@@ -49,31 +58,10 @@ export default function Navbar() {
         {/* Navigation Links */}
         <div className={`${isOpen ? "block" : "hidden"} sm:block`}>
           <div className="flex flex-col gap-5 mt-5 sm:flex-row sm:items-center sm:justify-end sm:mt-0 sm:ps-5">
-            <Link
-              href="#"
-              className="font-medium text-yellow-500 hover:text-yellow-600 focus:outline-hidden"
-              aria-current="page"
-            >
-              Home
-            </Link>
-            <Link
-              href="#"
-              className="font-medium text-black hover:text-gray-500 focus:outline-hidden dark:text-neutral-300 dark:hover:text-neutral-400"
-            >
-              Tools
-            </Link>
-            <Link
-              href="#"
-              className="font-medium text-black hover:text-gray-500 focus:outline-hidden dark:text-neutral-300 dark:hover:text-neutral-400"
-            >
-              About Us
-            </Link>
-            <Link
-              href="#"
-              className="font-medium text-black hover:text-gray-500 focus:outline-hidden dark:text-neutral-300 dark:hover:text-neutral-400"
-            >
-              Contact
-            </Link>
+            <Link href="/" className={linkClass("/")} onClick={() => setIsOpen(false)}>Home</Link>
+            <Link href="/goldsmith-tools" className={linkClass("/goldsmith-tools")} onClick={() => setIsOpen(false)}>Tools</Link>
+            <Link href="/jewellery-boxes" className={linkClass("/jewellery-boxes")} onClick={() => setIsOpen(false)}>Jewellery Boxes</Link>
+            <Link href="/contact" className={linkClass("/contact")} onClick={() => setIsOpen(false)}>Contact</Link>
           </div>
         </div>
       </nav>

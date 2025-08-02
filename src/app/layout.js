@@ -1,6 +1,8 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Playfair_Display } from "next/font/google";
+import Navbar from "@/components/mycomponents/Navbar";
+import Footer from "@/components/mycomponents/Footer";
 
 // Load Playfair Display
 const playfair = Playfair_Display({
@@ -20,7 +22,14 @@ export default function RootLayout({ children }) {
       <body
         className={`${playfair.className}  antialiased`}
       >
+           <div className="max-w-7xl mx-auto px-5 sm:px-10 md:px-12 lg:px-5 space-y-16 ">
+        <Navbar />
+           </div>
         {children}
+        <div className="max-w-7xl mx-auto px-5 sm:px-10 md:px-12 lg:px-5 space-y-16 ">
+        <Footer/>
+
+        </div>
       </body>
     </html>
   );
