@@ -14,6 +14,9 @@ const playfair = Playfair_Display({
 export const metadata = {
   title: "JewelToolHub | Goldsmith Tools & Jewellery Equipment in Amritsar",
   description: "Goldsmith tools, jewellery boxes, and accessories with direct delivery to your shop in Amritsar.",
+       verification: {
+    google: "NBcM0KC7LzlFvKgNFic_yLD1FHFResize2ExM6_15Mc",
+  },
   other: {
     "application/ld+json": JSON.stringify({
       "@context": "https://schema.org",
@@ -22,9 +25,7 @@ export const metadata = {
       image: "https://jeweltoolhub.vercel.app/Logobhai.png",
       url: "https://jeweltoolhub.vercel.app",
       telephone: "+91-6239535324",
-        verification: {
-    google: "NBcM0KC7LzlFvKgNFic_yLD1FHFResize2ExM6_15Mc",
-  },
+   
       address: {
         "@type": "PostalAddress",
         streetAddress: "828,katra mohar singh",
