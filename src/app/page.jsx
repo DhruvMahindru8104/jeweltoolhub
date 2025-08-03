@@ -1,18 +1,33 @@
-'use client'
 import HeroSection from "@/components/mycomponents/Hero";
 import FeaturesSection from "@/components/mycomponents/Feature";
 import MasonryGallery from "@/components/mycomponents/gallery";
 import MetricsSection from "@/components/mycomponents/metrics";
-import { useEffect } from "react";
-import { client } from "@/lib/sanity";
+
+
+
+export const metadata = {
+  title: "JewelToolHub | Goldsmith Tools & Jewellery Equipment in Amritsar",
+  description: "Premium goldsmith tools, jewellery boxes, ring boxes, trays & more. Direct delivery to your shop in Amritsar.",
+  keywords: ["goldsmith tools", "jewellery equipment", "Amritsar", "ring box", "jewellery box", "tops box", "trays", "chain box", "direct delivery to shop"],
+  openGraph: {
+    title: "JewelToolHub | Goldsmith Tools & Jewellery Equipment in Amritsar",
+    description: "Buy premium goldsmith tools and jewellery accessories with direct delivery to your shop in Amritsar.",
+    url: "https://jeweltoolhub.vercel.app",
+    siteName: "JewelToolHub",
+    images: [
+      {
+        url: "https://jeweltoolhub.vercel.app/Logobhai.png",
+        width: 1200,
+        height: 630,
+        alt: "Goldsmith Tools in Amritsar - JewelToolHub",
+      }
+    ],
+    locale: "en_IN",
+    type: "website",
+  },
+};
+
 export default function Home() {
-  useEffect(() => {
-  client.fetch(`*[_type == "tools"]{name, category}`).then((res) => {
-    console.log("Sanity data:", res)
-  }).catch((err) => {
-    console.error("Sanity error:", err)
-  })
-}, [])
 
   return (
    <>

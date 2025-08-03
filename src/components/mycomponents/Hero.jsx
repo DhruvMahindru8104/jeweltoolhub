@@ -3,8 +3,17 @@
 import Image from 'next/image';
 import { LuArrowDownRight } from 'react-icons/lu';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 export default function HeroSection() {
+const handleWhatsAppClick = () => {
+  window.open(
+    'https://wa.me/916239535324?text=Hello%2C%20I%20am%20interested%20in%20placing%20an%20order%20for%20Goldsmith%20Tools%20%2F%20Jewellery%20Supplies.%20Please%20share%20the%20product%20details%20and%20prices.',
+    '_blank'
+  );
+};
+
+
   return (
     <section className="py-4 md:py-20">
       <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-20">
@@ -23,7 +32,7 @@ export default function HeroSection() {
             width={800}
             height={800}
             className="max-h-[600px] w-full rounded-md object-cover lg:max-h-[800px]"
-            priority // improves LCP score
+            priority
           />
         </motion.div>
 
@@ -35,15 +44,14 @@ export default function HeroSection() {
           viewport={{ once: true }}
           className="flex flex-col items-center text-center lg:max-w-3xl lg:items-start lg:text-left"
         >
-          {/* New Release Badge */}
+          {/* New Service Badge */}
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
             className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors 
-              focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent 
-              bg-yellow-500 text-black hover:bg-yellow-400"
+              border-transparent bg-yellow-500 text-black hover:bg-yellow-400"
           >
             New Service
             <LuArrowDownRight className="ml-2 size-4" />
@@ -82,20 +90,22 @@ export default function HeroSection() {
             viewport={{ once: true }}
             className="flex w-full flex-col justify-center gap-2 sm:flex-row lg:justify-start"
           >
-            <button className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm 
-              ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring 
-              focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 
-              bg-yellow-500 text-black hover:bg-yellow-400 h-10 px-4 py-2 w-full sm:w-auto font-semibold">
+            <button
+              onClick={handleWhatsAppClick}
+              className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm 
+                bg-yellow-500 text-black hover:bg-yellow-400 h-10 px-4 py-2 w-full sm:w-auto font-semibold"
+            >
               Shop Now
             </button>
 
+           <Link href={"/contact"}>
             <button className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm  
-              ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring 
-              focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 
               border border-gray-300 bg-white hover:bg-zinc-100 hover:text-zinc-800 h-10 px-4 py-2 w-full sm:w-auto font-semibold">
               Learn More
               <LuArrowDownRight className="ml-2 size-4" />
             </button>
+                </Link>
+                
           </motion.div>
         </motion.div>
       </div>

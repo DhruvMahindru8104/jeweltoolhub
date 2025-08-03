@@ -2,6 +2,27 @@ import Image from "next/image";
 import Link from "next/link";
 import { Suspense } from "react";
 import { client } from "@/lib/sanity";
+export const metadata = {
+  title: "Chain Boxes for Jewellers in Amritsar | JewelToolHub",
+  description: "Premium chain boxes for jewellery shops. Direct shop delivery in Amritsar.",
+  keywords: ["chain box", "necklace box", "Amritsar", "direct shop delivery"],
+  openGraph: {
+    title: "Chain Boxes in Amritsar | JewelToolHub",
+    description: "Buy chain boxes with direct shop delivery in Amritsar.",
+    url: "https://jeweltoolhub.vercel.app/chain-boxes",
+    siteName: "JewelToolHub",
+    images: [
+      {
+        url: "https://jeweltoolhub.vercel.app/Logobhai.png",
+        width: 1200,
+        height: 630,
+        alt: "Chain Box - JewelToolHub",
+      }
+    ],
+    locale: "en_IN",
+    type: "website",
+  },
+};
 
 // ✅ Server-side data fetching with ISR for Chain Boxes
 async function getChainBoxesData() {

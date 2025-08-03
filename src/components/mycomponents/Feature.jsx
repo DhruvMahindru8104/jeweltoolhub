@@ -40,11 +40,11 @@ export default function FeaturesSection() {
           >
             <div className="rounded-t-lg bg-zinc-100 p-4 md:p-6">
               <Image
-                src="https://i.pinimg.com/1200x/55/a2/d9/55a2d9f17c1952f902ba079bb2e62511.jpg"
-                alt="Goldsmith tools delivery"
+                src="https://i.pinimg.com/736x/9e/71/c3/9e71c3b57c8600ba2a62161317fef58a.jpg"
+                alt="Goldsmith tools for jewellers"
                 width={800}
                 height={500}
-                className="aspect-video max-h-[500px] w-full rounded-lg object-cover"
+                className="aspect-sqaure max-h-[500px] w-full rounded-lg object-cover"
               />
             </div>
             <div className="p-6">
@@ -75,11 +75,11 @@ export default function FeaturesSection() {
           >
             <div className="rounded-t-lg bg-zinc-100 p-4 md:p-6">
               <Image
-                src="https://i.pinimg.com/1200x/55/a2/d9/55a2d9f17c1952f902ba079bb2e62511.jpg"
+                src="/jewelleryringbox.jpg"
                 alt="Jewellery boxes for jewellers"
                 width={800}
                 height={500}
-                className="aspect-video max-h-[500px] w-full rounded-lg object-cover"
+                className="aspect-square max-h-[500px] w-full rounded-lg object-cover object-top"
               />
             </div>
             <div className="p-6">

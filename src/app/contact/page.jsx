@@ -1,8 +1,27 @@
-'use client'
 
-import { motion } from 'framer-motion'
 import { MdEmail, MdPhone } from 'react-icons/md'
-import { FaWhatsapp, FaInstagram, FaFacebookF } from 'react-icons/fa'
+import { FaWhatsapp, FaInstagram } from 'react-icons/fa'
+export const metadata = {
+  title: "Contact JewelToolHub | Goldsmith Tools Supplier in Amritsar",
+  description: "Get in touch for goldsmith tools and jewellery equipment with direct shop delivery in Amritsar.",
+  keywords: ["contact goldsmith tools", "Amritsar jewellery tools", "direct delivery contact"],
+  openGraph: {
+    title: "Contact JewelToolHub | Goldsmith Tools Supplier in Amritsar",
+    description: "Contact us for goldsmith tools and jewellery boxes. Direct shop delivery in Amritsar.",
+    url: "https://jeweltoolhub.vercel.app/contact",
+    siteName: "JewelToolHub",
+    images: [
+      {
+        url: "https://jeweltoolhub.vercel.app/Logobhai.png",
+        width: 1200,
+        height: 630,
+        alt: "Contact JewelToolHub",
+      }
+    ],
+    locale: "en_IN",
+    type: "website",
+  },
+};
 
 const contactItems = [
   {
@@ -35,11 +54,7 @@ export default function ContactSection() {
     <div className="max-w-7xl mx-auto px-5 sm:px-10 md:px-12 lg:px-5 space-y-16 ">
     <section className="bg-white dark:bg-gray-950 py-4 md:py-20">
       <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
+        <div
           className="text-center"
         >
           <p className="text-yellow-600 font-medium">Contact us</p>
@@ -49,17 +64,12 @@ export default function ContactSection() {
           <p className="mt-3 text-gray-600 dark:text-gray-400">
             We'd love to hear from you. Reach out via any of the methods below.
           </p>
-        </motion.div>
+        </div>
 
         <div className="mt-12 grid grid-cols-1 gap-12 lg:grid-cols-3">
           <div className="grid gap-10">
             {contactItems.map((item, index) => (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.15 }}
-                viewport={{ once: true }}
+              <div
                 className="flex flex-col"
               >
                 <div className="flex items-start space-x-3">
@@ -101,16 +111,13 @@ export default function ContactSection() {
                     </a>
                   )}
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
 
           {/* Map Section */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
+          <div
+        
             className="lg:col-span-2 h-[400px] rounded-lg overflow-hidden shadow-lg"
           >
             <iframe
@@ -122,7 +129,7 @@ export default function ContactSection() {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

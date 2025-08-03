@@ -2,6 +2,27 @@ import Image from "next/image";
 import Link from "next/link";
 import { Suspense } from "react";
 import { client } from "@/lib/sanity";
+export const metadata = {
+  title: "Jewellery Display Trays in Amritsar | JewelToolHub",
+  description: "Durable jewellery display trays. Direct shop delivery in Amritsar.",
+  keywords: ["jewellery tray", "display tray", "Amritsar", "direct shop delivery"],
+  openGraph: {
+    title: "Jewellery Display Trays in Amritsar | JewelToolHub",
+    description: "Buy display trays for your jewellery shop with direct delivery in Amritsar.",
+    url: "https://jeweltoolhub.vercel.app/trays",
+    siteName: "JewelToolHub",
+    images: [
+      {
+        url: "https://jeweltoolhub.vercel.app/Logobhai.png",
+        width: 1200,
+        height: 630,
+        alt: "Jewellery Trays - JewelToolHub",
+      }
+    ],
+    locale: "en_IN",
+    type: "website",
+  },
+};
 
 // ✅ Server-side data fetching with ISR for Trays
 async function getTraysData() {

@@ -2,6 +2,27 @@ import Image from "next/image";
 import Link from "next/link";
 import { Suspense } from "react";
 import { client } from "@/lib/sanity";
+export const metadata = {
+  title: "Goldsmith Tools in Amritsar | JewelToolHub",
+  description: "High-quality goldsmith tools for jewellery making. Direct delivery to your shop in Amritsar.",
+  keywords: ["goldsmith tools", "jewellery making tools", "Amritsar", "direct delivery"],
+  openGraph: {
+    title: "Goldsmith Tools in Amritsar | JewelToolHub",
+    description: "Buy premium goldsmith tools with direct delivery to your shop in Amritsar.",
+    url: "https://jeweltoolhub.vercel.app/goldsmith-tools",
+    siteName: "JewelToolHub",
+    images: [
+      {
+        url: "https://jeweltoolhub.vercel.app/Logobhai.png",
+        width: 1200,
+        height: 630,
+        alt: "Goldsmith Tools - JewelToolHub",
+      }
+    ],
+    locale: "en_IN",
+    type: "website",
+  },
+};
 
 // ✅ Server function to fetch data with ISR
 async function getToolsData() {
